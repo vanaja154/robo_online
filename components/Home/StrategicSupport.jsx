@@ -1,5 +1,7 @@
+"use client";
 import Image from "next/image";
 import { FaChartLine, FaCoins, FaProjectDiagram, FaShieldAlt } from "react-icons/fa";
+import { motion } from "framer-motion";
 
 export default function StrategicSupport() {
   return (
@@ -12,10 +14,14 @@ export default function StrategicSupport() {
         }}
       >
         {/* Background Pattern Overlay */}
-        <div className="absolute inset-0 bg-[url('/pattern.png')] bg-cover bg-center opacity-20 mix-blend-overlay"></div>
+        <div className="absolute inset-0 bg-[url('/images/service-bg-2.jpg')] bg-cover bg-center opacity-20 mix-blend-overlay"></div>
 
-        {/* Globe SVG (Bottom Right) */}
-        <div className="absolute bottom-6 right-6 opacity-20 w-64 h-64 pointer-events-none">
+        {/* Rotating Globe SVG (Bottom Right) */}
+        <motion.div
+          className="absolute bottom-6 right-6 opacity-20 w-64 h-64 pointer-events-none"
+          animate={{ rotate: 360 }}
+          transition={{ repeat: Infinity, duration: 60, ease: "linear" }}
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -29,14 +35,14 @@ export default function StrategicSupport() {
             <line x1="5" y1="100" x2="195" y2="100" strokeWidth="1" />
             <line x1="100" y1="5" x2="100" y2="195" strokeWidth="1" />
           </svg>
-        </div>
+        </motion.div>
 
         {/* Content Wrapper */}
         <div className="relative z-10 grid md:grid-cols-2 gap-12 items-center">
           {/* Left Image */}
           <div className="flex justify-center">
             <Image
-              src="/onlinetraining.jpg"
+              src="/images/service-image.jpg"
               alt="Team Meeting"
               width={520}
               height={460}

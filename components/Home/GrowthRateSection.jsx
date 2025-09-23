@@ -1,5 +1,6 @@
 "use client";
 import { ArrowUpRight } from "lucide-react";
+import { motion } from "framer-motion";
 
 export default function GrowthRateSection() {
   const stats = [
@@ -20,28 +21,50 @@ export default function GrowthRateSection() {
     },
   ];
 
+  // Container for staggering child animations
+  const container = {
+    hidden: {},
+    visible: {
+      transition: {
+        staggerChildren: 0.3, // Each child appears 0.3s after previous
+      },
+    },
+  };
+
+  // Individual item animation
+  const item = {
+    hidden: { opacity: 0, y: 40 },
+    visible: { opacity: 1, y: 0, transition: { type: "spring", stiffness: 100, damping: 20, ease: "easeInOut" } },
+  };
+
   return (
     <section className="w-full flex justify-center bg-[#052B2B] px-4 md:px-8 lg:px-12">
       <div className="relative w-full max-w-7xl rounded-3xl overflow-hidden py-16 px-6 md:px-12 lg:px-16 text-white">
         {/* Background Image + Gradient Overlay */}
         <div className="absolute inset-0">
           <img
-            src="/growth-bg.png" // 👉 replace with your image
+            src="/images/growth-bg.jpg"
             alt="Background"
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(20,68,67,0)_0%,rgba(20,68,67,0.8)_14%,rgba(20,68,67,0.96)_30%,#144443_100%)]"></div>
+          <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(20,68,67,0)_0%,#144443_100%)]"></div>
         </div>
 
         {/* Content */}
-        <div className="relative z-10 max-w-7xl mx-auto">
+        <motion.div
+          className="relative z-10 max-w-7xl mx-auto"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.3 }}
+          variants={container}
+        >
           {/* Top Label */}
-          <p className="flex items-center gap-2 text-sm font-semibold text-green-400 mb-4">
+          <motion.p variants={item} className="flex items-center gap-2 text-sm font-semibold text-green-400 mb-4">
             <span className="text-lg">▸</span> Growth Rate
-          </p>
+          </motion.p>
 
           {/* Heading + Button */}
-          <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+          <motion.div variants={item} className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
             <h2 className="text-3xl md:text-5xl font-bold leading-snug max-w-3xl">
               Building Connections for grow <br /> Limitless Opportunities.
             </h2>
@@ -51,28 +74,31 @@ export default function GrowthRateSection() {
                 <ArrowUpRight className="w-5 h-5" />
               </span>
             </button>
-          </div>
+          </motion.div>
 
           {/* Divider Line */}
-          <div className="border-b border-gray-500/40 mt-10 mb-10"></div>
+          <motion.div variants={item} className="border-b border-gray-500/40 mt-10 mb-10"></motion.div>
 
           {/* Stats Section */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-            {stats.map((item, idx) => (
-              <div key={idx} className="flex flex-col items-center">
+          <motion.div
+            className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center"
+            variants={container}
+          >
+            {stats.map((itemStat, idx) => (
+              <motion.div key={idx} variants={item} className="flex flex-col items-center">
                 {/* Circle Progress */}
                 <div className="relative w-28 h-28 mb-4">
                   <div className="absolute inset-0 rounded-full bg-gradient-to-b from-green-300 to-green-600 flex items-center justify-center text-xl font-bold">
-                    {item.value}
+                    {itemStat.value}
                   </div>
                   <div className="absolute inset-0 rounded-full border-[6px] border-green-700 opacity-50"></div>
                 </div>
-                <h3 className="font-semibold text-lg">{item.title}</h3>
-                <p className="text-sm text-gray-300 mt-2">{item.desc}</p>
-              </div>
+                <h3 className="font-semibold text-lg">{itemStat.title}</h3>
+                <p className="text-sm text-gray-300 mt-2">{itemStat.desc}</p>
+              </motion.div>
             ))}
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       </div>
     </section>
   );
