@@ -1,19 +1,20 @@
 "use client";
 import { FaFacebookF, FaPinterestP, FaInstagram } from "react-icons/fa";
 import { RxCross2 } from "react-icons/rx";
+import Image from "next/image";
 
 export default function Footer() {
   return (
     <section className="w-full flex justify-center bg-[#0c2c2c] px-4 md:px-8 lg:px-12">
-      <footer className="relative w-full max-w-7xl rounded-t-3xl overflow-hidden text-white">
+      <footer className="relative w-full max-w-7xl bg-[#0f3d3d] rounded-t-3xl overflow-hidden text-white">
         {/* Background Overlay */}
         <div className="absolute inset-0">
           <img
-            src="/footer-shape.png" // 👉 put your mesh in /public/footer-bg.png
+            src="/images/footer-shape.png"
             alt="Footer Background"
             className="w-full h-full object-cover opacity-20"
           />
-          <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(20,68,67,0)_0%,rgba(20,68,67,0.8)_14%,rgba(20,68,67,0.96)_30%,#144443_100%)]"></div>
+          {/* <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(20,68,67,0)_0%,rgba(20,68,67,0.8)_14%,rgba(20,68,67,0.96)_30%,#144443_100%)]"></div> */}
         </div>
 
         {/* Content */}
@@ -21,16 +22,27 @@ export default function Footer() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
             {/* Head Office */}
             <div>
-              <h2 className="text-2xl font-bold mb-6">Finclix</h2>
+              {/* Logo */}
+              <div className="mb-6">
+                <Image
+                  src="/images/Logo-removebg-preview1 (1).png" 
+                  alt="Finclix Logo"
+                  width={150} 
+                  height={50} 
+                  className="object-contain"
+                />
+              </div>
+
+              {/* Head Office */}
               <h3 className="text-lg font-semibold mb-3">Head office</h3>
               <p className="mb-4">
                 2972 Westheimer Rd. Santa Ana, <br />
                 Illinois 85486
               </p>
-              <p className="mb-3 bg-[#1e3a39] px-4 py-3 rounded-lg inline-block">
+              <p className="mb-3 bg-[#0c2c2c] px-4 py-3 rounded-lg inline-block">
                 + (123) 456–7890
               </p>
-              <p className="bg-[#1e3a39] px-4 py-3 rounded-lg inline-block">
+              <p className="bg-[#0c2c2c] px-4 py-3 rounded-lg inline-block">
                 Yourcompany@example.com
               </p>
             </div>
@@ -72,16 +84,16 @@ export default function Footer() {
 
           {/* Social Icons */}
           <div className="flex justify-end mt-10 space-x-4">
-            <div className="w-10 h-10 flex items-center justify-center rounded-full bg-[#1e3a39] hover:bg-green-500 transition">
+            <div className="w-10 h-10 flex items-center justify-center rounded-full bg-[#0c2c2c] hover:bg-green-500 transition">
               <RxCross2 />
             </div>
-            <div className="w-10 h-10 flex items-center justify-center rounded-full bg-[#1e3a39] hover:bg-green-500 transition">
+            <div className="w-10 h-10 flex items-center justify-center rounded-full bg-[#0c2c2c] hover:bg-green-500 transition">
               <FaFacebookF />
             </div>
-            <div className="w-10 h-10 flex items-center justify-center rounded-full bg-[#1e3a39] hover:bg-green-500 transition">
+            <div className="w-10 h-10 flex items-center justify-center rounded-full bg-[#0c2c2c] hover:bg-green-500 transition">
               <FaPinterestP />
             </div>
-            <div className="w-10 h-10 flex items-center justify-center rounded-full bg-[#1e3a39] hover:bg-green-500 transition">
+            <div className="w-10 h-10 flex items-center justify-center rounded-full bg-[#0c2c2c] hover:bg-green-500 transition">
               <FaInstagram />
             </div>
           </div>

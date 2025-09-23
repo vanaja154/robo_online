@@ -51,7 +51,7 @@ export default function FaqSection() {
         {/* Top Image */}
         <motion.div variants={item} className="w-full md:w-1/2">
           <img
-            src="/images/faq-image.jpg"
+            src="/images/image.jpg"
             alt="Business Consulting"
             className="w-full h-auto rounded-2xl shadow-lg"
           />
