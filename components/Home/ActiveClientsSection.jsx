@@ -1,46 +1,57 @@
+"use client";
+
 import Image from "next/image";
 import { ArrowUpRight } from "lucide-react";
+import { motion } from "framer-motion";
 
 export default function ActiveClientsSection() {
+ 
+  const cardVariants = {
+    hidden: { opacity: 0, y: 50 }, 
+    visible: (i) => ({
+      opacity: 1,
+      y: 0,
+      transition: {
+        delay: i * 0.3,
+        duration: 0.6,
+        ease: "easeOut",
+      },
+    }),
+  };
+
   return (
-    <section className="bg-[#073534] text-white py-12 px-6 md:px-12">
-      <div className="max-w-7xl mx-auto grid md:grid-cols-3 gap-6">
-        {/* Left Column */}
-        <div className="bg-[#06302f] rounded-2xl p-8 flex flex-col justify-between">
+    <section className="bg-[#0F2727] text-white py-12 px-6 md:px-12">
+      <div className="max-w-7xl mx-auto grid md:grid-cols-3 gap-6 items-start">
+        
+        <motion.div
+          className="bg-[#06302f] rounded-2xl p-8"
+          variants={cardVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          custom={0}
+        >
           <div>
             {/* Profile Images */}
-            {/* <div className="flex -space-x-4 mb-6">
-              <Image
-                src="{client.src}"
-                width={50}
-                height={50}
-                className="rounded-full border-2 border-[#073534]"
-                alt="client"
-              />
-              <Image
-                src="https://i.ibb.co/Z1p9cJY/client2.jpg"
-                width={50}
-                height={50}
-                className="rounded-full border-2 border-[#073534]"
-                alt="client"
-              />
-              <Image
-                src="https://i.ibb.co/B27s8k9/client3.jpg"
-                width={50}
-                height={50}
-                className="rounded-full border-2 border-[#073534]"
-                alt="client"
-              />
-              <Image
-                src="https://i.ibb.co/Dw0jFmv/client4.jpg"
-                width={50}
-                height={50}
-                className="rounded-full border-2 border-[#073534]"
-                alt="client"
-              />
-            </div> */}
+            <div className="flex -space-x-4 mb-6">
+              {Array(4)
+                .fill(0)
+                .map((_, index) => (
+                  <Image
+                    key={index}
+                    src="/images/news-02.jpg"
+                    width={50}
+                    height={50}
+                    className="rounded-full border-2 border-[#073534]"
+                    alt="client"
+                  />
+                ))}
+            </div>
 
-            <h2 className="text-4xl font-bold mb-6">120M Active Clients</h2>
+            <h2 className="text-2xl font-bold mb-4">Expert team members</h2>
+            <p className="text-gray-300 mb-6">
+              We take pride in assembling a diverse and highly skilled.
+            </p>
           </div>
 
           {/* Button */}
@@ -53,10 +64,17 @@ export default function ActiveClientsSection() {
               <ArrowUpRight size={18} />
             </span>
           </a>
-        </div>
+        </motion.div>
 
-        {/* Business Consulting */}
-        <div className="bg-[#06302f] rounded-2xl p-8">
+        {/* Fastest Customer Service */}
+        <motion.div
+          className="bg-[#06302f] rounded-2xl p-8"
+          variants={cardVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          custom={1}
+        >
           <div className="mb-4 w-12 h-12 flex items-center justify-center rounded-full bg-gradient-to-r from-[#53e280] to-[#0fd6d6]">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -69,22 +87,28 @@ export default function ActiveClientsSection() {
               <path
                 strokeLinecap="round"
                 strokeLinejoin="round"
-                d="M21 13.5V6a2.25 2.25 0 00-2.25-2.25H5.25A2.25 2.25 0 003 6v12a2.25 2.25 0 002.25 2.25h8.379a2.25 2.25 0 001.591-.659l4.242-4.242a2.25 2.25 0 00.659-1.591z"
+                d="M12 6v6h4.5m4.5 0A9 9 0 1112 3a9 9 0 019 9z"
               />
             </svg>
           </div>
-          <h3 className="text-xl font-semibold mb-3">Business Consulting</h3>
+          <h2 className="text-xl font-semibold mb-3">Fastest customer service</h2>
           <p className="text-gray-300 mb-4">
-            There are many variations of passages of Lorem Ipsum available, but
-            the majority have suffered alteration in some form, by injected
+            We pride ourselves on providing the fastest customer service industry.
           </p>
           <a href="#" className="underline text-white font-medium">
             Read More
           </a>
-        </div>
+        </motion.div>
 
-        {/* Business Strategy */}
-        <div className="bg-[#06302f] rounded-2xl p-8">
+        {/* Reasonable Pricing */}
+        <motion.div
+          className="bg-[#06302f] rounded-2xl p-8"
+          variants={cardVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          custom={2}
+        >
           <div className="mb-4 w-12 h-12 flex items-center justify-center rounded-full bg-gradient-to-r from-[#53e280] to-[#0fd6d6]">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -101,15 +125,14 @@ export default function ActiveClientsSection() {
               />
             </svg>
           </div>
-          <h3 className="text-xl font-semibold mb-3">business Strategy</h3>
+          <h3 className="text-xl font-semibold mb-3">Reasonable pricing</h3>
           <p className="text-gray-300 mb-4">
-            There are many variations of passages of Lorem Ipsum available, but
-            the majority have suffered alteration in some form, by injected
+            We believe in providing reasonable pricing that offers exceptional.
           </p>
           <a href="#" className="underline text-white font-medium">
             Read More
           </a>
-        </div>
+        </motion.div>
       </div>
     </section>
   );
