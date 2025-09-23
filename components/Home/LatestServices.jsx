@@ -1,6 +1,5 @@
 "use client";
 import { ArrowRight, Users, BarChart3, Target, RefreshCcw } from "lucide-react";
-import { motion } from "framer-motion";
 
 export default function LatestServices() {
   const services = [
@@ -26,38 +25,14 @@ export default function LatestServices() {
     },
   ];
 
-  // Container variant to stagger children
-  const container = {
-    hidden: {},
-    visible: { transition: { staggerChildren: 0.25 } },
-  };
-
-  // Individual item animation
-  const item = {
-    hidden: { opacity: 0, y: 40, scale: 0.95 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      scale: 1,
-      transition: { type: "spring", stiffness: 100, damping: 20, ease: "easeInOut" },
-    },
-  };
-
   return (
     <section className="bg-[#052B2B] text-white py-20 px-6">
-      <motion.div
-        className="max-w-7xl mx-auto"
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.3 }}
-        variants={container}
-      >
+      <div className="max-w-7xl mx-auto">
         {/* Top Heading */}
-        <motion.p variants={item} className="text-green-400 font-semibold text-sm flex items-center gap-2 mb-4">
+        <p className="text-green-400 font-semibold text-sm flex items-center gap-2 mb-4">
           <span className="text-lg">▸</span> LATEST SERVICES
-        </motion.p>
-
-        <motion.div variants={item} className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+        </p>
+        <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
           <h2 className="text-3xl md:text-5xl font-bold leading-snug">
             We provide consulting to <br /> strategic growth.
           </h2>
@@ -65,33 +40,28 @@ export default function LatestServices() {
             Finclix is the destination where early adopters and innovation
             enthusiasts discover cutting-edge technology
           </p>
-        </motion.div>
+        </div>
 
         {/* Services Grid */}
-        <motion.div
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-14 mb-12"
-          variants={container}
-        >
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-14 mb-12">
           {services.map((service, idx) => (
-            <motion.div
+            <div
               key={idx}
-              variants={item}
-              className="bg-[#0B3D3D] rounded-xl p-8 text-center flex flex-col items-center"
+              className="bg-[#0B3D3D] rounded-xl p-8 pt-16 text-center relative flex flex-col items-center"
             >
-              <div className="bg-gradient-to-b from-green-300 to-green-600 rounded-full p-5 mb-6">
+              {/* Floating Icon */}
+              <div className="absolute -top-7 left-1/2 transform -translate-x-1/2 bg-gradient-to-b from-green-300 to-green-600 rounded-full p-5">
                 {service.icon}
               </div>
-              <h3 className="font-semibold text-lg mb-3">{service.title}</h3>
+
+              <h3 className="font-semibold text-lg mt-4 mb-3">{service.title}</h3>
               <p className="text-sm text-gray-400">{service.desc}</p>
-            </motion.div>
+            </div>
           ))}
-        </motion.div>
+        </div>
 
         {/* Bottom Highlight Box */}
-        <motion.div
-          variants={item}
-          className="bg-gradient-to-r from-green-400 to-green-300 text-black rounded-full py-4 px-6 flex items-center justify-center gap-3 font-medium max-w-3xl mx-auto"
-        >
+        <div className="bg-gradient-to-r from-green-400 to-green-300 text-black rounded-full py-4 px-6 flex items-center justify-center gap-3 font-medium max-w-3xl mx-auto">
           <span className="bg-black text-green-300 rounded-full p-2">
             <ArrowRight className="w-5 h-5" />
           </span>
@@ -101,8 +71,8 @@ export default function LatestServices() {
               Know All Services
             </a>
           </span>
-        </motion.div>
-      </motion.div>
+        </div>
+      </div>
     </section>
   );
 }

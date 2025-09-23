@@ -15,7 +15,7 @@ export default function GrowthRateSection() {
       desc: "End to end fiber optic cable connectivity for stable",
     },
     {
-      value: "75%",
+      value: "100%",
       title: "24/7 Support",
       desc: "End to end fiber optic cable connectivity for stable",
     },
@@ -34,7 +34,11 @@ export default function GrowthRateSection() {
   // Individual item animation
   const item = {
     hidden: { opacity: 0, y: 40 },
-    visible: { opacity: 1, y: 0, transition: { type: "spring", stiffness: 100, damping: 20, ease: "easeInOut" } },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { type: "spring", stiffness: 100, damping: 20, ease: "easeInOut" },
+    },
   };
 
   return (
@@ -88,9 +92,11 @@ export default function GrowthRateSection() {
               <motion.div key={idx} variants={item} className="flex flex-col items-center">
                 {/* Circle Progress */}
                 <div className="relative w-28 h-28 mb-4">
-                  <div className="absolute inset-0 rounded-full bg-gradient-to-b from-green-300 to-green-600 flex items-center justify-center text-xl font-bold">
+                  {/* Inner Circle with spacing from border */}
+                  <div className="absolute inset-3 rounded-full bg-gradient-to-b from-green-300 to-green-600 flex items-center justify-center text-xl font-bold">
                     {itemStat.value}
                   </div>
+                  {/* Outer Border Circle */}
                   <div className="absolute inset-0 rounded-full border-[6px] border-green-700 opacity-50"></div>
                 </div>
                 <h3 className="font-semibold text-lg">{itemStat.title}</h3>

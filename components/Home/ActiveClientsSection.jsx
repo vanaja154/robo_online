@@ -5,9 +5,8 @@ import { ArrowUpRight } from "lucide-react";
 import { motion } from "framer-motion";
 
 export default function ActiveClientsSection() {
- 
   const cardVariants = {
-    hidden: { opacity: 0, y: 50 }, 
+    hidden: { opacity: 0, y: 50 },
     visible: (i) => ({
       opacity: 1,
       y: 0,
@@ -22,7 +21,7 @@ export default function ActiveClientsSection() {
   return (
     <section className="bg-[#0F2727] text-white py-12 px-6 md:px-12">
       <div className="max-w-7xl mx-auto grid md:grid-cols-3 gap-6 items-start">
-        
+        {/* Expert Team Members */}
         <motion.div
           className="bg-[#06302f] rounded-2xl p-8"
           variants={cardVariants}
@@ -40,16 +39,18 @@ export default function ActiveClientsSection() {
                   <Image
                     key={index}
                     src="/images/news-02.jpg"
-                    width={50}
-                    height={50}
+                    width={80}
+                    height={180}
                     className="rounded-full border-2 border-[#073534]"
                     alt="client"
                   />
                 ))}
             </div>
 
-            <h2 className="text-2xl font-bold mb-4">Expert team members</h2>
-            <p className="text-gray-300 mb-6">
+            <h2 className="text-2xl lg:text-3xl font-bold mb-4">
+              Expert team members
+            </h2>
+            <p className="text-gray-300 mb-6 text-base lg:text-lg">
               We take pride in assembling a diverse and highly skilled.
             </p>
           </div>
@@ -57,7 +58,7 @@ export default function ActiveClientsSection() {
           {/* Button */}
           <a
             href="#"
-            className="inline-flex items-center justify-between w-[220px] bg-gradient-to-r from-[#53e280] to-[#0fd6d6] text-[#073534] font-semibold px-6 py-3 rounded-full hover:opacity-90 transition"
+            className="inline-flex items-center justify-between w-[220px] lg:w-[260px] bg-gradient-to-r from-[#53e280] to-[#0fd6d6] text-[#073534] font-semibold px-6 py-3 lg:py-4 rounded-full hover:opacity-90 transition text-sm lg:text-base"
           >
             Lets Talk With Us
             <span className="bg-[#073534] text-white rounded-full p-2 ml-3">
@@ -66,7 +67,7 @@ export default function ActiveClientsSection() {
           </a>
         </motion.div>
 
-        {/* Fastest Customer Service */}
+        {/* Business Consulting */}
         <motion.div
           className="bg-[#06302f] rounded-2xl p-8"
           variants={cardVariants}
@@ -91,16 +92,22 @@ export default function ActiveClientsSection() {
               />
             </svg>
           </div>
-          <h2 className="text-xl font-semibold mb-3">Fastest customer service</h2>
-          <p className="text-gray-300 mb-4">
-            We pride ourselves on providing the fastest customer service industry.
+          <h2 className="text-xl lg:text-2xl font-semibold mb-3">
+            Business Consulting
+          </h2>
+          <p className="text-gray-300 mb-4 text-base lg:text-lg">
+            There are many variations of passages of Lorem Ipsum available, but
+            the majority have suffered alteration in some form, by injected
           </p>
-          <a href="#" className="underline text-white font-medium">
+          <a
+            href="#"
+            className="underline text-white font-medium text-sm lg:text-base"
+          >
             Read More
           </a>
         </motion.div>
 
-        {/* Reasonable Pricing */}
+        {/* Business Strategy */}
         <motion.div
           className="bg-[#06302f] rounded-2xl p-8"
           variants={cardVariants}
@@ -125,11 +132,17 @@ export default function ActiveClientsSection() {
               />
             </svg>
           </div>
-          <h3 className="text-xl font-semibold mb-3">Reasonable pricing</h3>
-          <p className="text-gray-300 mb-4">
-            We believe in providing reasonable pricing that offers exceptional.
+          <h3 className="text-xl lg:text-2xl font-semibold mb-3">
+            Business Strategy
+          </h3>
+          <p className="text-gray-300 mb-4 text-base lg:text-lg">
+            There are many variations of passages of Lorem Ipsum available, but
+            the majority have suffered alteration in some form, by injected
           </p>
-          <a href="#" className="underline text-white font-medium">
+          <a
+            href="#"
+            className="underline text-white font-medium text-sm lg:text-base"
+          >
             Read More
           </a>
         </motion.div>

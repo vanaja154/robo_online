@@ -18,7 +18,7 @@ export default function StrategicSupport() {
 
         {/* Rotating Globe SVG (Bottom Right) */}
         <motion.div
-          className="absolute bottom-6 right-6 opacity-20 w-64 h-64 pointer-events-none"
+          className="absolute  right-6 opacity-20 w-64 h-64 pointer-events-none"
           animate={{ rotate: 360 }}
           transition={{ repeat: Infinity, duration: 60, ease: "linear" }}
         >
@@ -53,64 +53,64 @@ export default function StrategicSupport() {
           {/* Right Content */}
           <div>
             {/* Section Label */}
-            <p className="text-sm uppercase tracking-wide text-green-300 mb-3 flex items-center gap-2">
-              <span className="text-lg">▸</span> Latest Services
+            <p className="text-sm lg:text-base uppercase tracking-wide text-green-300 mb-3 flex items-center gap-2 lg:gap-3 lg:px-2">
+              <span className="text-lg lg:text-xl">▸</span> Latest Services
             </p>
 
             {/* Heading */}
-            <h2 className="text-3xl md:text-4xl font-bold leading-snug mb-10">
-              You Need Someone At with <br /> Strategic Support
+            <h2 className="text-3xl lg:text-4xl xl:text-4xl font-bold leading-snug mb-10 lg:mb-12 lg:px-2">
+              You Need Someone At with  Strategic Support
             </h2>
 
             {/* Services Grid */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-10 gap-y-10">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-10 gap-y-10 lg:gap-x-12 lg:gap-y-12">
               {/* Business Consulting */}
-              <div className="flex items-start gap-4">
-                <div className="bg-green-500 rounded-full p-3 flex items-center justify-center">
-                  <FaChartLine className="text-white text-lg" />
+              <div className="flex items-start gap-4 lg:gap-6">
+                <div className="bg-green-500 rounded-full p-3 lg:p-4 flex items-center justify-center">
+                  <FaChartLine className="text-white text-lg lg:text-xl" />
                 </div>
                 <div>
-                  <h3 className="font-semibold text-lg">Business Consulting</h3>
-                  <p className="text-sm text-gray-300 leading-relaxed">
+                  <h3 className="font-semibold text-lg lg:text-xl">Business Consulting</h3>
+                  <p className="text-sm lg:text-base text-white leading-relaxed lg:leading-7">
                     everyone with high and useful reward for his Financial statement analysis, Cost-benefit analysis.
                   </p>
                 </div>
               </div>
 
               {/* Finance Management */}
-              <div className="flex items-start gap-4">
-                <div className="bg-green-500 rounded-full p-3 flex items-center justify-center">
-                  <FaCoins className="text-white text-lg" />
+              <div className="flex items-start gap-4 lg:gap-6">
+                <div className="bg-green-500 rounded-full p-3 lg:p-4 flex items-center justify-center">
+                  <FaCoins className="text-white text-lg lg:text-xl" />
                 </div>
                 <div>
-                  <h3 className="font-semibold text-lg">Finance Management</h3>
-                  <p className="text-sm text-gray-300 leading-relaxed">
+                  <h3 className="font-semibold text-lg lg:text-xl">Finance Management</h3>
+                  <p className="text-sm lg:text-base text-white leading-relaxed lg:leading-7">
                     everyone with high and useful reward for his Financial statement analysis, Cost-benefit analysis.
                   </p>
                 </div>
               </div>
 
               {/* Invest Process */}
-              <div className="flex items-start gap-4">
-                <div className="bg-green-500 rounded-full p-3 flex items-center justify-center">
-                  <FaProjectDiagram className="text-white text-lg" />
+              <div className="flex items-start gap-4 lg:gap-6">
+                <div className="bg-green-500 rounded-full p-3 lg:p-4 flex items-center justify-center">
+                  <FaProjectDiagram className="text-white text-lg lg:text-xl" />
                 </div>
                 <div>
-                  <h3 className="font-semibold text-lg">Invest Process</h3>
-                  <p className="text-sm text-gray-300 leading-relaxed">
+                  <h3 className="font-semibold text-lg lg:text-xl">Invest Process</h3>
+                  <p className="text-sm lg:text-base text-white leading-relaxed lg:leading-7">
                     everyone with high and useful reward for his Financial statement analysis, Cost-benefit analysis.
                   </p>
                 </div>
               </div>
 
               {/* Life Insurance */}
-              <div className="flex items-start gap-4">
-                <div className="bg-green-500 rounded-full p-3 flex items-center justify-center">
-                  <FaShieldAlt className="text-white text-lg" />
+              <div className="flex items-start gap-4 lg:gap-6">
+                <div className="bg-green-500 rounded-full p-3 lg:p-4 flex items-center justify-center">
+                  <FaShieldAlt className="text-white text-lg lg:text-xl" />
                 </div>
                 <div>
-                  <h3 className="font-semibold text-lg">Life Insurance</h3>
-                  <p className="text-sm text-gray-300 leading-relaxed">
+                  <h3 className="font-semibold text-lg lg:text-xl">Life Insurance</h3>
+                  <p className="text-sm lg:text-base text-white leading-relaxed lg:leading-7">
                     everyone with high and useful reward for his Financial statement analysis, Cost-benefit analysis.
                   </p>
                 </div>

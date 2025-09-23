@@ -21,7 +21,7 @@ export default function Aboutpage() {
             <BusinessJourney />
             <StrategicSupport />
             <OpportunitySection />
-            <PricingPlans />
+            {/* <PricingPlans /> */}
             <LatestServices />
             <GrowthRateSection />
             <TeamSection />
