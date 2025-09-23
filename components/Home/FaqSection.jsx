@@ -1,80 +1,100 @@
 "use client";
-import Image from "next/image";
+import { useState } from "react";
 import { IoIosArrowForward } from "react-icons/io";
+import { motion } from "framer-motion";
+
+const faqs = [
+  {
+    question: "How Can Business Consulting Benefit My Company?",
+    answer: "Business consulting helps optimize processes, increase revenue, and provide expert insights tailored to your company's needs.",
+  },
+  {
+    question: "What Are the Costs of Your Consulting Services?",
+    answer: "It is widely recognized that a reader's attention can be diverted by the content layout of a page. Many desktop publishing software and website editors now use Lorem Ipsum as placeholder text.",
+  },
+  {
+    question: "How Do You Measure the Success of a Project?",
+    answer: "We track KPIs, milestones, and ROI metrics to ensure every project meets its goals efficiently.",
+  },
+  {
+    question: "Do You Provide Remote Consulting Services?",
+    answer: "Yes, we provide remote consulting through video calls, emails, and project management tools.",
+  },
+  {
+    question: "What Industries Do You Specialize In?",
+    answer: "We specialize in technology, finance, healthcare, and small-to-medium enterprises.",
+  },
+];
 
 export default function FaqSection() {
-  const faqs = [
-    "How Can Business Consulting Benefit My Company?",
-    "What Are the Costs of Your Consulting Services?",
-    "How Do You Measure the Success of a Project?",
-    "Do You Provide Remote Consulting Services?",
-    "What Industries Do You Specialize In?",
-  ];
+  const [activeIndex, setActiveIndex] = useState(null);
+
+  const container = {
+    hidden: {},
+    visible: { transition: { staggerChildren: 0.2 } },
+  };
+
+  const item = {
+    hidden: { opacity: 0, y: 30 },
+    visible: { opacity: 1, y: 0, transition: { type: "spring", stiffness: 100, damping: 20 } },
+  };
 
   return (
-    <section className="w-full flex justify-center bg-[#0c2c2c] px-4 md:px-8 lg:px-12">
-      <div className="relative w-full max-w-7xl rounded-3xl overflow-hidden py-16 px-6 md:px-12 lg:px-16 text-white">
-        {/* Background Overlay */}
-        <div className="absolute inset-0">
-          <Image
-            src="/dotted-map-dark.png" // 👉 replace with your background image in /public
-            alt="FAQ Background"
-            fill
-            className="object-cover"
+    <section className="bg-[#0a3a36] py-16 px-4 md:px-8 lg:px-12 text-white">
+      <motion.div
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.3 }}
+        variants={container}
+        className="max-w-6xl mx-auto flex flex-col md:flex-row gap-12 items-start"
+      >
+        {/* Top Image */}
+        <motion.div variants={item} className="w-full md:w-1/2">
+          <img
+            src="/images/faq-image.jpg"
+            alt="Business Consulting"
+            className="w-full h-auto rounded-2xl shadow-lg"
           />
-          <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(20,68,67,0)_0%,rgba(20,68,67,0.8)_14%,rgba(20,68,67,0.96)_30%,#144443_100%)]"></div>
-        </div>
+        </motion.div>
 
-        {/* Content */}
-        <div className="relative z-10 max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
-          {/* Left Image */}
-          <div className="relative rounded-2xl overflow-hidden shadow-lg">
-            <Image
-              src="/profile.jpg" // 👉 replace with your image in /public
-              alt="FAQ"
-              width={600}
-              height={500}
-              className="rounded-2xl object-cover"
-            />
-          </div>
-
-          {/* Right Content */}
-          <div>
-            <p className="text-green-400 font-semibold flex items-center gap-2">
+        {/* Content + FAQ */}
+        <motion.div variants={item} className="w-full md:w-1/2 flex flex-col gap-8">
+          <motion.div variants={item}>
+            <p className="text-green-400 font-semibold flex items-center gap-2 mb-2">
               <span className="text-green-400">▶</span> FAQ
             </p>
-            <h2 className="mt-4 text-4xl font-bold leading-snug">
-              Top Questions Answered
-            </h2>
-            <p className="mt-4 text-gray-300 max-w-lg">
-              Everyone with high and useful reward for his Financial statement
-              analysis, Cost-benefit analysis everyone with high and useful
-              reward for his
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Top Questions Answered</h2>
+            <p className="text-gray-300 max-w-md">
+              Everyone with high and useful reward for his Financial statement analysis, Cost-benefit analysis.
             </p>
-
-            {/* Button */}
-            <button className="mt-6 flex items-center justify-center gap-3 px-6 py-3 rounded-full bg-gradient-to-r from-green-300 to-green-500 text-black font-semibold">
-              Lets Talk With Us
-              <span className="w-8 h-8 rounded-full bg-white flex items-center justify-center">
-                <IoIosArrowForward className="text-black text-lg" />
-              </span>
+            <button className="mt-6 bg-gradient-to-r from-green-400 to-green-500 text-black px-6 py-3 rounded-full flex items-center gap-2 hover:opacity-90 transition">
+              Lets Talk With Us <IoIosArrowForward />
             </button>
+          </motion.div>
 
-            {/* FAQ List */}
-            <div className="mt-8 space-y-4">
-              {faqs.map((faq, index) => (
-                <div
-                  key={index}
-                  className="flex items-center justify-between px-6 py-4 rounded-lg bg-[#0f3d3d] hover:bg-[#115252] transition"
-                >
-                  <span className="text-white font-medium">{faq}</span>
-                  <IoIosArrowForward className="text-gray-300" />
+          {/* FAQ List */}
+          <motion.div variants={container} className="flex flex-col gap-4">
+            {faqs.map((faq, idx) => (
+              <motion.div
+                key={idx}
+                variants={item}
+                className="bg-[#094442] rounded-lg p-4 cursor-pointer"
+                onClick={() => setActiveIndex(activeIndex === idx ? null : idx)}
+              >
+                <div className="flex justify-between items-center">
+                  <h3 className="font-semibold text-lg">{faq.question}</h3>
+                  <span className={`transform transition-transform ${activeIndex === idx ? "rotate-90" : ""}`}>
+                    <IoIosArrowForward />
+                  </span>
                 </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </div>
+                {activeIndex === idx && (
+                  <p className="text-gray-300 mt-2">{faq.answer}</p>
+                )}
+              </motion.div>
+            ))}
+          </motion.div>
+        </motion.div>
+      </motion.div>
     </section>
   );
 }

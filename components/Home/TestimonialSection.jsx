@@ -38,7 +38,7 @@ export default function TestimonialSection() {
   return (
     <section className="relative py-16 bg-[#002d2d] text-white">
       {/* Background world map */}
-      <div className="absolute inset-0 opacity-20 bg-[url('/mask-shape.png')] bg-cover bg-center"></div>
+      <div className="absolute inset-0 opacity-20 bg-[url('/images/mask-shape.png')] bg-cover bg-center"></div>
 
       <div className="relative max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center gap-12">
         {/* Left - Profile */}
