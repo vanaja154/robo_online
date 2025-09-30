@@ -1,3 +1,4 @@
+import AppDevelopmentCom from "@/components/AppDevelopmentCom";
 import FaqSection from "@/components/BusinessConsulting/FaqSection";
 import CustomHeroSection from "@/utils/CustomHeroSection";
 import ServiceHeadSection from "@/utils/SeviceHeadSection";
@@ -25,7 +26,7 @@ export default function page() {
         ]}
         videoImage="/images/service-details.jpg"
       />
-
+      <AppDevelopmentCom />
       {/* 🔹 FAQ Section */}
       <FaqSection />
     </div>
