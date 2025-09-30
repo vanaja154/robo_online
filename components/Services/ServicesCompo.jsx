@@ -23,7 +23,7 @@ const services = [
     id: "03",
     icon: Layers,
     title: "IT Services",
-    desc: "End-to-end IT services including software development, cloud solutions, and technical support tailored to your business needs.",
+    desc: "End-to-end IT services with software development, cloud solutions, tailored technical support.",
     link: "/it-services",
   },
 ];

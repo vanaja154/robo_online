@@ -16,7 +16,6 @@ export default function page() {
           "We provide expert business consulting services to help you achieve sustainable growth, optimize operations, and make informed strategic decisions.",
         ]}
       />
-      {/* <ServiceHeadSection /> */}
       <ServiceHeadSection
         label="Business Consulting"
         headingLines={["Business Consulting Services"]}
@@ -26,9 +25,7 @@ export default function page() {
         ]}
         videoImage="/images/service-details.jpg"
       />
-      {/* <ServiceDetails /> */}
       <BusinessConsultingPage />
-      {/* <ServicesFaqSection /> */}
       <FaqSection />
     </div>
   );

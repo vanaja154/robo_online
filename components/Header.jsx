@@ -63,7 +63,7 @@ export default function Header() {
         {/* Right Side (Desktop CTA) */}
         <div className="hidden md:flex items-center space-x-4">
           <Link
-            href="/contact"
+            href="/contactus"
             className="px-5 py-2 bg-gradient-to-r from-[#C8F169] to-[#039397] text-white rounded-full hover:from-[#039397] hover:to-[#C8F169] transition duration-300"
           >
             Free Consultation
@@ -111,7 +111,7 @@ export default function Header() {
 
             {/* Mobile CTA - same as desktop (colors swapped for hover) */}
             <Link
-              href="/contact"
+              href="/contactus"
               className="mt-3 px-5 py-2 bg-gradient-to-r from-[#C8F169] to-[#039397] text-white rounded-full hover:from-[#039397] hover:to-[#C8F169] transition duration-300 text-center"
               onClick={() => setIsOpen(false)}
             >

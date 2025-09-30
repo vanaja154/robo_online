@@ -17,7 +17,7 @@ const services = [
     id: "05",
     icon: Smartphone,
     title: "Mobile Solutions",
-    desc: "Custom mobile app development and solutions to help businesses connect with customers on the go.",
+    desc: "Custom mobile app development and innovative solutions to help businesses connect with customers on the go,drive growth.",
     link: "/mobile-solutions",
   },
   {
