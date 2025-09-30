@@ -1,34 +1,35 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Briefcase, Folder, Layers } from "lucide-react";
+import { Laptop, Smartphone, Code } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link"; 
+
 const services = [
   {
-    id: "01",
-    icon: Briefcase,
-    title: "Business Consulting",
-    desc: "Everyone with high and useful reward for his We offer a free consultation so that.",
-    link: "/business-consulting", 
+    id: "04",
+    icon: Laptop,
+    title: "Online Training",
+    desc: "Interactive and practical online training programs designed to upskill teams and individuals with the latest technologies.",
+    link: "/online-training", 
   },
   {
-    id: "02",
-    icon: Folder,
-    title: "Invest Process",
-    desc: "Everyone with high and useful reward for his We offer a free consultation so that.",
-    link: "/invest-process",
+    id: "05",
+    icon: Smartphone,
+    title: "Mobile Solutions",
+    desc: "Custom mobile app development and solutions to help businesses connect with customers on the go.",
+    link: "/mobile-solutions",
   },
   {
-    id: "03",
-    icon: Layers,
-    title: "IT Services",
-    desc: "End-to-end IT services including software development, cloud solutions, and technical support tailored to your business needs.",
-    link: "/it-services",
+    id: "06",
+    icon: Code,
+    title: "App Development Services",
+    desc: "End-to-end application development services with modern frameworks, scalable architecture, and seamless user experiences.",
+    link: "/app-development",
   },
 ];
 
-export default function ServicesCompo() {
+export default function ServicesCompo2() {
   return (
     <section className="text-white py-16 px-6 md:px-12">
       <div className="max-w-7xl mx-auto grid gap-10 md:grid-cols-3">

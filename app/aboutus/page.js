@@ -1,4 +1,5 @@
 import Testimonials from "@/components/AboutUs/Testimonials";
+import WhatWeDo from "@/components/AboutUs/WhatWeDo";
 import BusinessJourney from "@/components/Home/BusinessJourney";
 import ContactSection from "@/components/Home/ContactSection";
 import TeamSection from "@/components/Home/TeamSection";
@@ -19,6 +20,7 @@ export default function page() {
       />
       <BusinessJourney />
       {/* what wwe do */}
+      <WhatWeDo />
       <TeamSection />
       <Testimonials />
       <ContactSection />

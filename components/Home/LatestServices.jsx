@@ -67,7 +67,7 @@ export default function LatestServices() {
           </span>
           <span>
             We Strive To Lead The Way In The Business{" "}
-            <a href="#" className="underline font-semibold">
+            <a href="/services" className="underline font-semibold">
               Know All Services
             </a>
           </span>
