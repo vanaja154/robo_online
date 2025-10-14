@@ -14,6 +14,7 @@ export default function Header() {
     { name: "Collaborations", href: "/collaborations" },
     { name: "Directors", href: "/directors" },
     { name: "Share Holders", href: "/shareholders" },
+    { name: "Gallery", href: "/gallery" },
   ];
 
   return (
