@@ -1,4 +1,4 @@
-import Collaborators from "@/components/collaborators";
+import Collaborators from "@/components/Collaborators";
 import ContactSection from "@/components/Home/ContactSection";
 import TestimonialSection from "@/components/Home/TestimonialSection";
 import CustomHeroSection from "@/utils/CustomHeroSection";
