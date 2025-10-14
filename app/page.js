@@ -1,5 +1,4 @@
 import ActiveClientsSection from '@/components/Home/ActiveClientsSection';
-import BlogSection from '@/components/Home/BlogSection';
 import BusinessJourney from '@/components/Home/BusinessJourney';
 import ContactSection from '@/components/Home/ContactSection';
 import FaqSection from '@/components/Home/FaqSection';
@@ -28,7 +27,7 @@ export default function Aboutpage() {
             <TestimonialSection />
             <ContactSection />
             <FaqSection />
-            <BlogSection />
+            {/* <BlogSection /> */}
         </div>
     );
 }
