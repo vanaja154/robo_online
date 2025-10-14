@@ -53,31 +53,29 @@ export default function Footer() {
                 <h3 className="text-lg font-semibold mb-4">Quick Link</h3>
                 <ul className="space-y-2 text-gray-300">
                   <li>About Us</li>
-                  <li>Our Team</li>
-                  <li>Our Portfolio</li>
-                  <li>Careers</li>
+                  <li>Services</li>
+                  <li>Collaborations</li>
                   <li>Contact Us</li>
                 </ul>
               </div>
-              <div className="pt-10 md:pt-12">
+              {/* <div className="pt-10 md:pt-12">
                 <ul className="space-y-2 text-gray-300">
                   <li>Works</li>
                   <li>Expertise</li>
                   <li>Blog</li>
                   <li>Awards</li>
                 </ul>
-              </div>
+              </div> */}
             </div>
 
             {/* Our Solutions */}
             <div>
               <h3 className="text-lg font-semibold mb-4">Our Solutions</h3>
               <ul className="space-y-2 text-gray-300">
-                <li>Web Development</li>
-                <li>UI/UX Design</li>
-                <li>Mobile Application</li>
-                <li>Cloud Service</li>
-                <li>Cyber Security</li>
+                <li>Strategic Investments</li>
+                <li>Putting Customers First</li>
+                <li>Smarter Business Decisions</li>
+                <li>Driving Innovation with agile</li>
               </ul>
             </div>
           </div>
