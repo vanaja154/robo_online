@@ -28,6 +28,7 @@ function LeftContent() {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
     >
+      {/* Heading */}
       <h1 className="text-white flex flex-col text-3xl lg:text-7xl font-semibold">
         <span>We are Helping</span>
         <span className="flex flex-wrap gap-1">
@@ -62,16 +63,41 @@ function LeftContent() {
         <span>Success</span>
       </h1>
 
+      {/* Description & Circle with AtoZ */}
       <div className="flex flex-col lg:flex-row items-center gap-2 z-20 relative">
         <p className="text-white text-lg font-medium">
           everyone with high and useful reward <br /> for his/her trading,
           purchase and <br /> investment. Our goal is to make the
         </p>
-        <div className="absolute hidden lg:flex right-10 -top-[10px] bg-[#C8F169] rounded-full items-center justify-center spin-slow-custom">
-          <img src="/images/text-circle.png" alt="" />
+
+        {/* Text-circle with AtoZ */}
+        <div className="absolute hidden lg:flex right-10 -top-[10px] bg-[#C8F169] rounded-full items-center justify-center">
+          {/* Circle Image */}
+          <img
+            src="/images/text-circle.png"
+            alt=""
+            className="spin-slow-custom"
+          />
+
+          {/* Animated AtoZ Text */}
+          <motion.span
+            className="absolute font-bold text-lg lg:text-xl text-black"
+            animate={{
+              opacity: [0.5, 1, 0.5],
+              textShadow: [
+                "0 0 2px #C8F169, 0 0 5px #C8F169",
+                "0 0 5px #C8F169, 0 0 10px #C8F169",
+                "0 0 2px #C8F169, 0 0 5px #C8F169",
+              ],
+            }}
+            transition={{ repeat: Infinity, duration: 1.5, ease: "easeInOut" }}
+          >
+            AtoZ
+          </motion.span>
         </div>
       </div>
 
+      {/* Button */}
       <div className="w-full flex lg:block items-center justify-center">
         <button className="relative w-[250px] overflow-hidden rounded-full group bg-[#ffffff1a] cursor-pointer">
           <span className="absolute inset-0 bg-[#C8F169] -translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-in-out"></span>
@@ -108,5 +134,3 @@ function RightContent() {
     </motion.div>
   );
 }
-
-
