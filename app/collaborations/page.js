@@ -1,6 +1,6 @@
+import Testimonials from "@/components/AboutUs/Testimonials";
 import Collaborators from "@/components/Collaborators";
 import ContactSection from "@/components/Home/ContactSection";
-import TestimonialSection from "@/components/Home/TestimonialSection";
 import CustomHeroSection from "@/utils/CustomHeroSection";
 import React from "react";
 
@@ -15,7 +15,8 @@ export default function page() {
         ]}
       />
       <Collaborators />
-      <TestimonialSection />
+      {/* <TestimonialSection /> */}
+      <Testimonials />
       <ContactSection />
     </div>
   );

@@ -3,7 +3,7 @@ import Image from "next/image";
 import { useState } from "react";
 import { FaQuoteRight, FaStar } from "react-icons/fa";
 import { MdArrowBackIos, MdArrowForwardIos } from "react-icons/md";
-import { motion } from "framer-motion"; // ✅ Import motion
+import { motion } from "framer-motion"; 
 
 // Dummy data
 const testimonials = [
@@ -69,14 +69,14 @@ export default function Testimonials() {
           className="text-green-300 text-sm md:text-base lg:text-lg font-medium uppercase mb-4 flex items-center justify-center gap-3"
         >
           <span className="inline-block w-0 h-0 border-t-[6px] border-b-[6px] border-l-[10px] border-transparent border-l-green-400"></span>
-          How It Works
+          What Our Clients Say
         </motion.p>
 
         <motion.h2
           variants={item}
           className="text-3xl md:text-4xl lg:text-2xl xl:text-6xl font-bold leading-snug"
         >
-          Connect, Collaborate, & Create <br /> Limitless Opportunities.
+          Inspiring Stories from <br /> Our Valued Partners & Clients
         </motion.h2>
       </motion.div>
 
