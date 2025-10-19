@@ -127,7 +127,7 @@ function RightContent() {
 
       <div className="lg:h-[500px] lg:w-full relative z-10">
         <img
-          src="/images/hero-img.png"
+          src="/images/heroimg.png"
           className="h-full w-full object-contain"
         />
       </div>
