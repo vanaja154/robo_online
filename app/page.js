@@ -12,7 +12,7 @@ import TeamSection from '@/components/Home/TeamSection';
 import TestimonialSection from '@/components/Home/TestimonialSection';
 import React from 'react';
 
-export default function Aboutpage() {
+export default function page() {
     return (
         <div>
             <HeroSection />

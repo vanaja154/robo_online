@@ -23,9 +23,9 @@ const services = [
   {
     id: "06",
     icon: Code,
-    title: "App Development Services",
+    title: "Facility Management Services",
     desc: "End-to-end application development services with modern frameworks, scalable architecture, and seamless user experiences.",
-    link: "/app-development",
+    link: "/facility-management",
   },
 ];
 

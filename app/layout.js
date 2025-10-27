@@ -2,6 +2,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import TopHeader from "@/components/TopHeader";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -17,16 +18,21 @@ export const metadata = {
   title: "RoboOnline",
   description: "Cutting-edge software, AI, and IT services",
   icons: {
-    icon: "/Logo-removebg-preview1 (1).ico", // Correct path without 'public/'
+    icon: "/Logo-removebg-preview1 (1).ico",
   },
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+      <body
+        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-[#0A2222]`}
+      >
+        <TopHeader />
         <Header />
-        {children}
+        <main className="pt-[50px]">{/* Add top padding to avoid overlap */}
+          {children}
+        </main>
         <Footer />
       </body>
     </html>
