@@ -20,9 +20,9 @@ export default function TopHeader() {
 
         {/* Center - Company Name (Visible only on Desktop) */}
         <div className="hidden md:flex items-center justify-center text-center">
-          <h1 className="text-white text-lg font-semibold tracking-wide">
+          <h1 className="text-white text-lg lg:text-3xl font-semibold tracking-wide">
             RK4CES Soft Solutions Ltd{" "}
-            <span className="text-[#C8F169] ml-3">Since 1995</span>
+            <span className="text-[#C8F169] ml-3 lg:text-xl">Since 1995</span>
           </h1>
         </div>
 

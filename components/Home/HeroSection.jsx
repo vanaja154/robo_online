@@ -8,17 +8,30 @@ export default function HeroSection() {
   const slides = [
     { id: 1, heading: "Sharpen Your Edge with Our Expertise" },
     { id: 2, heading: "Best Facility Management Services in India" },
+    { id: 3, heading: "Innovative Business Consulting Solutions" },
+    { id: 4, heading: "Trusted Investment Process Management" },
+    { id: 5, heading: "Strategic Investment Growth Solutions" },
+    { id: 6, heading: "Smarter Business Decision Strategies" },
   ];
 
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [flipCount, setFlipCount] = useState(0);
+  const wordsPerSlide = 3; // Flip 3 times before next slide
 
-  // Auto slide every 6 seconds
+  // Flip words every 2.5s
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % slides.length);
-    }, 6000);
+      setFlipCount((prev) => prev + 1);
+    }, 2500);
     return () => clearInterval(interval);
-  }, [slides.length]);
+  }, []);
+
+  // After 3 flips → change slide
+  useEffect(() => {
+    if (flipCount > 0 && flipCount % wordsPerSlide === 0) {
+      setCurrentSlide((prev) => (prev + 1) % slides.length);
+    }
+  }, [flipCount, slides.length]);
 
   return (
     <section className="bg-[#0F2727] lg:h-[100vh] p-8 lg:mt-2 overflow-hidden">
@@ -33,8 +46,8 @@ export default function HeroSection() {
             animate={{ x: 0, opacity: 1 }}
             exit={{ x: "-100%", opacity: 0 }}
             transition={{
-              duration: 1,
-              ease: "easeInOut",
+              duration: 1.2,
+              ease: [0.42, 0, 0.58, 1], // smooth easeInOut cubic
             }}
             className="flex flex-col lg:flex-row items-center justify-center w-full gap-10 lg:gap-48"
           >
@@ -48,15 +61,22 @@ export default function HeroSection() {
 }
 
 function LeftContent({ heading }) {
-  const words = ["Anything", "Anytime", "Anywhere"];
-  const [currentWordIndex, setCurrentWordIndex] = useState(0);
+  const texts = ["Anything", "Anytime", "Anywhere"];
+  const [index, setIndex] = useState(0);
 
+  // Rotate text every 2.5 seconds
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentWordIndex((prev) => (prev + 1) % words.length);
+      setIndex((prev) => (prev + 1) % texts.length);
     }, 2500);
     return () => clearInterval(interval);
-  }, []);
+  }, [texts.length]);
+
+  const flipVariants = {
+    initial: { rotateX: 90, opacity: 0 },
+    animate: { rotateX: 0, opacity: 1 },
+    exit: { rotateX: -90, opacity: 0 },
+  };
 
   return (
     <motion.div
@@ -70,26 +90,19 @@ function LeftContent({ heading }) {
         <span>{heading}</span>
       </h1>
 
-      {/* Flip Animation */}
-      <div className="relative mt-4 h-[50px] perspective-[800px]">
+      {/* ✅ Replaced Animation Section */}
+      <div className="h-10 md:h-12 overflow-hidden perspective-[1000px]">
         <AnimatePresence mode="wait">
           <motion.span
-            key={currentWordIndex}
-            initial={{ rotateX: 90, opacity: 0 }}
-            animate={{ rotateX: 0, opacity: 1 }}
-            exit={{ rotateX: -90, opacity: 0 }}
-            transition={{
-              duration: 0.6,
-              ease: [0.45, 0, 0.55, 1],
-            }}
-            className="absolute text-white text-2xl lg:text-3xl font-medium bg-gradient-to-r from-[#C8F169] to-[#039397] bg-clip-text text-transparent"
-            style={{
-              transformOrigin: "center",
-              display: "inline-block",
-              backfaceVisibility: "hidden",
-            }}
+            key={index}
+            variants={flipVariants}
+            initial="initial"
+            animate="animate"
+            exit="exit"
+            transition={{ duration: 0.6, ease: "easeInOut" }}
+            className="inline-block text-2xl lg:text-5xl font-medium bg-gradient-to-r from-[#C8F169] to-[#039397] bg-clip-text text-transparent"
           >
-            {words[currentWordIndex]}
+            {texts[index]}
           </motion.span>
         </AnimatePresence>
       </div>
@@ -132,14 +145,10 @@ function LeftContent({ heading }) {
   );
 }
 
+// ✅ RightContent
 function RightContent() {
   return (
-    <motion.div
-      className="relative mt-4 lg:mt-0 flex justify-center items-center"
-      initial={{ opacity: 0, y: 80 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
-    >
+    <div className="relative mt-4 lg:mt-0 flex justify-center items-center">
       <div className="absolute -left-5 top-1/2 transform -translate-y-1/2 w-64 h-52 lg:w-[200px] lg:h-[300px] bg-[#C8F169] opacity-30 rounded-l-full filter blur-3xl pointer-events-none"></div>
 
       <div className="lg:h-[800px] lg:w-full relative z-10">
@@ -149,6 +158,6 @@ function RightContent() {
           alt="Hero"
         />
       </div>
-    </motion.div>
+    </div>
   );
 }
