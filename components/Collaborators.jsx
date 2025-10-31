@@ -99,10 +99,16 @@ export default function Collaborations() {
 
         <motion.div variants={item}>
           <CollaborationCard
-            logo="/images/infosys.png"
-            companyName="Infosys Technologies Ltd."
-            description="Infosys is a global leader in technology services and consulting. We enable clients in more than 50 countries to create and execute digital transformation strategies."
-            link="https://www.infosys.com/"
+            logo="/images/CrystalyteLogo.jpg"
+            companyName="Crystolyte Associates India Pvt. Ltd."
+            description="Crystolyte Associates india Pvt. Ltd is based in Hyderabad
+                provides facility management services to corporate
+                offices, shopping malls, corporate Hospital s, Gated
+                communities, software companies,
+                Five star hotels, Educational institutions, and all types of
+                industries with strong and committed team."
+
+            link="https://crystolyteindia.com/ "
           />
         </motion.div>
       </motion.div>

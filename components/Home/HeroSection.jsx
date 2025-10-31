@@ -34,11 +34,23 @@ export default function HeroSection() {
   }, [flipCount, slides.length]);
 
   return (
-    <section className="bg-[#0F2727] lg:h-[100vh] p-8 lg:mt-2 overflow-hidden">
-      <div
-        className="h-full w-full flex items-center justify-center gap-10 lg:gap-48 lg:px-8 px-4 flex-col lg:flex-row 
-        bg-none lg:bg-[url('/images/hero-bg.png')] lg:bg-center lg:bg-cover lg:bg-no-repeat"
-      >
+    <section className="bg-[#0F2727] lg:h-[100vh] p-8 lg:mt-2 overflow-hidden relative">
+      <AnimatePresence mode="wait">
+        <motion.div
+          key={currentSlide} // sync with text animation
+          initial={{ x: "100%", opacity: 0 }}
+          animate={{ x: 0, opacity: 1 }}
+          exit={{ x: "-100%", opacity: 0 }}
+          transition={{
+            duration: 1.2,
+            ease: [0.42, 0, 0.58, 1],
+          }}
+          className="absolute inset-0 lg:bg-[url('/images/hero-bg.png')] bg-center bg-cover bg-no-repeat opacity-100 blur-[1px]"
+        ></motion.div>
+      </AnimatePresence>
+
+
+      <div className="relative z-10 h-full w-full flex items-center justify-center gap-10 lg:gap-48 lg:px-8 px-4 flex-col lg:flex-row">
         <AnimatePresence mode="wait">
           <motion.div
             key={currentSlide}
@@ -47,7 +59,7 @@ export default function HeroSection() {
             exit={{ x: "-100%", opacity: 0 }}
             transition={{
               duration: 1.2,
-              ease: [0.42, 0, 0.58, 1], // smooth easeInOut cubic
+              ease: [0.42, 0, 0.58, 1],
             }}
             className="flex flex-col lg:flex-row items-center justify-center w-full gap-10 lg:gap-48"
           >
@@ -57,6 +69,7 @@ export default function HeroSection() {
         </AnimatePresence>
       </div>
     </section>
+
   );
 }
 
